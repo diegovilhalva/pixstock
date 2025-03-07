@@ -22,7 +22,7 @@ export const collectionCard = collection => {
       <div>
         <h3 class="body-large">${title}</h3>
   
-        <p class="body-medium label">${media_count} media</p>
+        <p class="body-medium label">${media_count} ${media_count > 1 ? 'medias': 'media'} </p>
       </div>
   
       <a href="${root}/pages/collections/collection_detail.html?collectionId=${id}&title=${title}" class="state-layer"></a>
