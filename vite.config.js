@@ -26,7 +26,8 @@ export default defineConfig({
           Authorization: process.env.VITE_PEXELS_API_KEY
         }
       }
-    }
+    },
+    cors:true
   },
   publicDir: 'public'
 });
