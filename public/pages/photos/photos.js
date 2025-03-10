@@ -1,6 +1,31 @@
-/**
- * @copyright codewithsadee 2023
- * @author sadee <codewithsadee@gmail.com>
- */
 
 "use strict";
+
+import { updateUrl } from "../../../src/js/utils/updateUrl";
+
+
+const $filterBar = document.querySelector("[data-filter-bar]")
+
+$filterBar.style.display = window.location.search ? "flex" : "none"
+
+const  $filterWrappers = document.querySelectorAll("[data-filter]")
+
+$filterWrappers.forEach($filterWrapper => {
+    filter($filterWrapper,window.filterObj,(newObj) => {
+        window.filterObj = newObj
+        updateUrl(newObj,"photos")
+    })
+})
+
+const $photoGrid = document.querySelector("[data-photo-grid]");
+const $title = document.querySelector("[data-title]");
+const photoGrid = gridInit($photoGrid);
+const  perPage = 30;
+let  currentPage = 1;
+let  totalPage = 0;
+const  searchUrl = window.location.search.slice(1);
+let  searchObj = searchUrl && urlDecode(searchUrl);
+const  title = searchObj ? `${searchObj.query} photos` : "Curated photos"
+
+$title.textContent = title
+document.title  = title

@@ -6,6 +6,7 @@ import { segment } from "./segment_btn";
 import { addEventOnElements } from "./utils/event";
 import { ripple } from "./utils/ripple";
 import { updateUrl } from "./utils/updateUrl";
+import { urlDecode } from "./utils/urlDecode";
 
 
 
@@ -107,3 +108,8 @@ for (let i = 0; i < historyLength & i <= 6; i++) {
     $searchList.appendChild($listItem)
 
 }
+
+const search = urlDecode(window.location.search.slice(1))
+
+if (search.query) $searchField.value = search.query
+
