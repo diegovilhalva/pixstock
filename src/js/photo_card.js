@@ -2,7 +2,7 @@
 
 "use strict";
 
-import { favorite } from "../../public/pages/favorite/favorite";
+import { favorite } from "./favorite";
 import { ripple } from "./utils/ripple"
 
 export const photoCard = photo => {

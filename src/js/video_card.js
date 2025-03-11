@@ -2,7 +2,7 @@
 "use strict";
 
 import { ripple } from "./utils/ripple.js";
-import { favorite } from "../../public/pages/favorite/favorite.js"; 
+import { favorite } from "./favorite.js"; 
 import { hoverOnPlay } from "./utils/hoverOnPlay.js";
 
 
