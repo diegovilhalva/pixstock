@@ -5,6 +5,7 @@
 
 import { addEventOnElements } from "./utils/event";
 import { ripple } from "./utils/ripple";
+import { urlDecode } from "./utils/urlDecode";
 
 
 
@@ -34,6 +35,24 @@ addEventOnElements($navTogglers, "click", () => {
 
 window.filterObj = {}
 
+if (window.location.search.slice(1)) {
+
+    const search = urlDecode(window.location.search.slice(1));
+  
+    Object.entries(search).forEach(item => {
+      const  filterKey = item[0];
+      const  filterValue = item[1];
+      window.filterObj[filterKey] = filterValue;
+  
+      if (filterKey !== "query") {
+        const $filterItem = document.querySelector(`[data-filter="${filterKey}"`);
+        $filterItem?.querySelector("[data-filter-chip]").classList.add("selected");
+  
+        if ($filterItem) $filterItem.querySelector("[data-filter-value").innerText = filterValue;
+      }
+    });
+  
+  }
 
 
 

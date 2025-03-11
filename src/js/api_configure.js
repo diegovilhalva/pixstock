@@ -43,6 +43,7 @@ export const client = {
         search(parameters, callback) {
             requestUrl = `${root.default}search?${urlEncode(parameters)}`;
             fetchData(requestUrl, callback);
+            
         },
 
 
