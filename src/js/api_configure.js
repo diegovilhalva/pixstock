@@ -1,22 +1,17 @@
-
-
 "use strict";
 
 /**
  * Import
  */
-
 import { urlEncode } from "./utils/urlEncode.js";
 
-
-
-const API_KEY = import.meta.env.VITE_PEXELS_API_KEY
+const API_URL = import.meta.env.VITE_PEXELS_API_URL;
+const API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
 
 const headers = new Headers();
 headers.append("Authorization", API_KEY);
 
 const requestOptions = { headers };
-
 
 const fetchData = async function (url, successCallback) {
     const response = await fetch(url, requestOptions);
@@ -24,73 +19,58 @@ const fetchData = async function (url, successCallback) {
     if (response.ok) {
         const data = await response.json();
         successCallback(data);
+    } else {
+        console.error("Erro ao buscar dados da API:", response.status, response.statusText);
     }
-}
+};
 
 let requestUrl = "";
 
 const root = {
-    default: "/api/",
-    videos: "/api/videos/"
-}
-
+    default: `${API_URL}/v1/`,
+    videos: `${API_URL}/videos/`
+};
 
 export const client = {
-
     photos: {
-
-
         search(parameters, callback) {
             requestUrl = `${root.default}search?${urlEncode(parameters)}`;
             fetchData(requestUrl, callback);
-            
         },
-
 
         curated(parameters, callback) {
             fetchData(`${root.default}curated?${urlEncode(parameters)}`, callback);
         },
 
-
         detail(id, callback) {
             fetchData(`${root.default}photos/${id}`, callback);
         }
-
     },
 
     videos: {
-
-
         search(parameters, callback) {
             requestUrl = `${root.videos}search?${urlEncode(parameters)}`;
             fetchData(requestUrl, callback);
         },
-
 
         popular(parameters, callback) {
             fetchData(`${root.videos}popular?${urlEncode(parameters)}`, callback);
         },
 
         detail(id, callback) {
-            fetchData(`${root.videos}videos/${id}`, callback);
+            fetchData(`${root.videos}${id}`, callback);
         }
-
     },
 
     collections: {
-
-
         featured(parameters, callback) {
             requestUrl = `${root.default}collections/featured?${urlEncode(parameters)}`;
             fetchData(requestUrl, callback);
         },
 
-
         detail(id, parameters, callback) {
-            requestUrl = `${root.default}/collections/${id}?${urlEncode(parameters)}`;
+            requestUrl = `${root.default}collections/${id}?${urlEncode(parameters)}`;
             fetchData(requestUrl, callback);
         }
-
-    },
-
-}
+    }
+};
