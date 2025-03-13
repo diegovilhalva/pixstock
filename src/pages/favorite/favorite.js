@@ -1,9 +1,9 @@
 "use strict"
 
-import { gridInit, updateGrid } from '../../../src/js/utils/masonry_grid'
-import { segment } from "../../../src/js/segment_btn"
-import { photoCard } from '../../../src/js/photo_card'
-import { videoCard } from '../../../src/js/video_card'
+import { gridInit, updateGrid } from '../../js/utils/masonry_grid'
+import { segment } from "../../js/segment_btn"
+import { photoCard } from '../../js/photo_card'
+import { videoCard } from '../../js/video_card'
 
 const $favoriteSegment = document.querySelector("[data-segment='favorite']")
 let favType = "photos"

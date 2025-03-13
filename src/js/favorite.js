@@ -2,7 +2,7 @@
 
 "use strict";
 
-import { client } from "../js/api_configure"; 
+import { client } from "./api_configure"; 
 
 export const favorite = ($element, type, id) => {
     $element.addEventListener("click", () => {

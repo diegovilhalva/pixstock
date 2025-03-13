@@ -1,0 +1,8 @@
+{
+    "routes": [
+      { "src": "/photos/photo_detail", "dest": "/photos/photo_detail.html" },
+      { "src": "/videos/video_detail", "dest": "/videos/video_detail.html" },
+      { "src": "/collections/collection_detail", "dest": "/collections/collection_detail.html" }
+    ]
+  }
+  

@@ -2,11 +2,11 @@
 
 "use strict";
 
-import { client } from "../../../src/js/api_configure";
-import {gridInit,updateGrid}  from "../../../src/js/utils/masonry_grid"
-import {photoCard}  from "../../../src/js/photo_card"
-import {videoCard} from "../../../src/js/video_card"
-import {urlDecode} from "../../../src/js/utils/urlDecode"
+import { client } from "../../js/api_configure";
+import {gridInit,updateGrid}  from "../../js/utils/masonry_grid"
+import {photoCard}  from "../../js/photo_card"
+import {videoCard} from "../../js/video_card"
+import {urlDecode} from "../../js/utils/urlDecode"
 
 const $collectionGrid =  document.querySelector("[data-collection-grid]")
 const $title = document.querySelector("[data-title]")

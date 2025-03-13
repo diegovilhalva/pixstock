@@ -1,12 +1,12 @@
 
 "use strict";
 
-import { client } from "../../../src/js/api_configure";
-import { menu } from "../../../src/js/menu";
-import { photoCard } from "../../../src/js/photo_card";
-import { gridInit, updateGrid } from "../../../src/js/utils/masonry_grid";
-import { ripple } from "../../../src/js/utils/ripple";
-import { favorite } from "../../../src/js/favorite";
+import { client } from "../../js/api_configure";
+import { menu } from "../../js/menu";
+import { photoCard } from "../../js/photo_card";
+import { gridInit, updateGrid } from "../../js/utils/masonry_grid";
+import { ripple } from "../../js/utils/ripple";
+import { favorite } from "../../js/favorite";
 
 
 

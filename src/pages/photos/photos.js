@@ -5,12 +5,12 @@
 
 
 
-import { client } from "../../../src/js/api_configure.js";
-import { gridInit, updateGrid } from "../../../src/js/utils/masonry_grid.js";
-import { photoCard } from "../../../src/js/photo_card.js";
-import { updateUrl } from "../../../src/js/utils/updateUrl.js";
-import { urlDecode } from "../../../src/js/utils/urlDecode.js";
-import { filter } from "../../../src/js/filter.js";
+import { client } from "../../js/api_configure.js";
+import { gridInit, updateGrid } from "../../js/utils/masonry_grid.js";
+import { photoCard } from "../../js/photo_card.js";
+import { updateUrl } from "../../js/utils/updateUrl.js";
+import { urlDecode } from "../../js/utils/urlDecode.js";
+import { filter } from "../../js/filter.js";
 
 
 

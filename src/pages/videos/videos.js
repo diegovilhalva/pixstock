@@ -1,12 +1,12 @@
 
 "use strict"
 
-import { client } from "../../../src/js/api_configure"
-import { gridInit, updateGrid } from "../../../src/js/utils/masonry_grid"
-import { videoCard } from "../../../src/js/video_card"
-import { updateUrl } from "../../../src/js/utils/updateUrl"
-import { urlDecode } from "../../../src/js/utils/urlDecode"
-import { filter } from "../../../src/js/filter"
+import { client } from "../../js/api_configure"
+import { gridInit, updateGrid } from "../../js/utils/masonry_grid"
+import { videoCard } from "../../js/video_card"
+import { updateUrl } from "../../js/utils/updateUrl"
+import { urlDecode } from "../../js/utils/urlDecode"
+import { filter } from "../../js/filter"
 
 const $filterBar = document.querySelector("[data-filter-bar]");
 

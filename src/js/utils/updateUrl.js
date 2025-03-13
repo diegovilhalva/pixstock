@@ -8,6 +8,6 @@ export const updateUrl = (filterObj, searchType) => {
         const root = window.location.origin
         const searcgQuery = urlEncode(filterObj)
 
-        window.location = `${root}/pages/${searchType}/${searchType}.html?${searcgQuery}`
+        window.location = `${root}/src/pages/${searchType}/${searchType}.html?${searcgQuery}`
     },500)
 }

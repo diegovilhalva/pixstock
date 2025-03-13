@@ -1,17 +1,27 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import dotenv from 'dotenv';
 
 
-dotenv.config();
 
 export default defineConfig({
+  base: './', 
   build: {
+    outDir: 'dist', 
+    assetsDir: 'assets', 
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        photos: resolve(__dirname, 'public/pages/photos/photos.html'),
-        photo_detail: resolve(__dirname, 'public/pages/photos/photo_detail.html')
+        photos: resolve(__dirname, 'src/pages/photos/photos.html'),
+        videos: resolve(__dirname, 'src/pages/videos/videos.html'),
+        collections: resolve(__dirname, 'src/pages/collections/collection.html'),
+        favorites: resolve(__dirname, 'src/pages/favorite/favorite.html'),
+        photoDetail: resolve(__dirname, 'src/pages/photos/photo_detail.html'),
+        videoDetail: resolve(__dirname, 'src/pages/videos/video_detail.html'),
+        collectionDetail:resolve(__dirname,'src/pages/collections/collection_detail.html')
+      },
+      output: {
+        entryFileNames: 'assets/js/[name].js',
+        assetFileNames: 'assets/[ext]/[name].[ext]',
       }
     }
   },
@@ -22,12 +32,10 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/v1'),
         headers: {
-          
           Authorization: process.env.VITE_PEXELS_API_KEY
         }
       }
     },
-    cors:true
-  },
-  publicDir: 'public'
+    historyApiFallback: true,
+  }
 });

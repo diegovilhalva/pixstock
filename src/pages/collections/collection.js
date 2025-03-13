@@ -2,8 +2,8 @@
 
 "use strict";
 
-import { client } from "../../../src/js/api_configure";
-import { collectionCard } from "../../../src/js/collection_card"
+import { client } from "../../js/api_configure";
+import { collectionCard } from "../../js/collection_card"
 
 const $collectionGrid = document.querySelector("[data-collection-grid]")
 const perPage = 36

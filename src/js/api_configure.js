@@ -58,7 +58,7 @@ export const client = {
         },
 
         detail(id, callback) {
-            fetchData(`${root.videos}${id}`, callback);
+            fetchData(`${root.videos}videos/${id}`, callback);
         }
     },
 
